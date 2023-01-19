@@ -1,0 +1,106 @@
+.form {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    margin: 35px auto;
+    padding: 30px;
+    background-color: #f1f1f1;
+}
+
+.form h2 {
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+.form h2 small {
+    font-style: italic;
+    display: block;
+}
+
+.form input,
+.form textarea {
+    display: block;
+    width: 100%;
+}
+
+.form fieldset {
+    border: 0;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.form button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.form-checkable {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.form-checkable input {
+    width: 13px;
+    flex: 0 0 13px;
+    margin: 0;
+    padding: 0;
+    margin-right: 15px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    /* padding: 10px; */
+}
+
+.form-control small {
+    display: none;
+    font-size: 12px;
+    font-style: italic;
+    color: #f00;
+    text-align: right;
+    margin-top: 15px;
+    padding-top: 5px;
+    border-top: 1px solid #f00;
+}
+
+.form-control.has-error label {
+    color: #f00;
+}
+
+.form-control.has-error small {
+    display: block;
+}
+
+.form-message {
+    color: #fff;
+    display: block;
+    text-align: center;
+    padding: 10px 10px 12px;
+}
+
+.form-message.is-error {
+    background-color: #f00;
+}
+
+.form-message.is-success {
+    background-color: rgb(25, 167, 20);
+}
+
+/* FORMIK ADJUSTMENTS */
+
+.form.is-formik .form-control div {
+    font-size: 12px;
+    font-style: italic;
+    color: #f00;
+    text-align: right;
+    margin-top: 15px;
+    padding-top: 5px;
+    border-top: 1px solid #f00;
+}
+
+/* .form.is-formik .form-control.has-error small {
+    display: none;
+} */

@@ -1,0 +1,44 @@
+.calculator {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    margin: 35px auto;
+    padding: 30px;
+    background-color: #f1f1f1;
+}
+
+.calculator h2 {
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+.calculator h2 small {
+    font-style: italic;
+    display: block;
+}
+
+.calculator input,
+.calculator select,
+.calculator button {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.calculator button {
+    margin-bottom: 0;
+}
+
+.calculator-result {
+    text-align: center;
+    margin: 20px 0 0;
+}
+
+.calculator-result > span {
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+    color: rgb(0, 129, 17);
+    display: block;
+}

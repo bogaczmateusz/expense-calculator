@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "headline": "Default expanse with long headline #1",
+        "amount": -20,
+        "tags": "-"
+    },
+    {
+        "id": 2,
+        "headline": "Default expanse #2",
+        "amount": -50,
+        "tags": "car, expense"
+    },
+    {
+        "id": 3,
+        "headline": "Default expanse #3",
+        "amount": -115,
+        "tags": "dentist"
+    },
+    {
+        "id": 4,
+        "headline": "Default expanse #4",
+        "amount": -10,
+        "tags": "food"
+    },
+    {
+        "id": 5,
+        "headline": "Default expanse #5",
+        "amount": -20,
+        "tags": "food"
+    }
+]

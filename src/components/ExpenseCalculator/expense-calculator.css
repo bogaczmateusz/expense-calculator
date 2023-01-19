@@ -1,0 +1,342 @@
+.expense-calculator {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #d9d4ed;
+}
+
+.expense-calculator-viewport {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 5px 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  /* box-shadow: 10px 10px 0px #BFB7E1; */
+}
+
+.expense-calculator-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: calc(100% + 50px);
+  margin-left: -25px;
+}
+
+.expense-calculator-column {
+  width: calc(50% - 10px);
+  flex: 0 0 calc(50% - 10px);
+  padding: 5px 10px 10px;
+  border-radius: 10px;
+  /* border: 5px solid #6754b6; */
+  background-color: #eeeafd;
+}
+
+.expense-calculator-column > * {
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+.expense-calculator-column-summary {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  align-self: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+  margin-top: 10px;
+  padding: 15px 0 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.expense-calculator-column-summary:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 auto 10px;
+  background-color: #fff;
+}
+
+.expense-calculator-column-summary > span {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 100%;
+  margin: 0;
+}
+
+.expense-calculator-column.is-expenses
+  .expense-calculator-column-summary
+  > span,
+.expense-calculator-column.is-expenses .expense-calculator-item-amount {
+  background-color: rgb(175, 52, 52);
+}
+
+.expense-calculator-column.is-incomes .expense-calculator-column-summary > span,
+.expense-calculator-column.is-incomes .expense-calculator-item-amount {
+  background-color: rgb(11, 145, 62);
+}
+
+.expense-calculator-column.is-result,
+.expense-calculator-column.is-form {
+  width: 100%;
+  flex: 0 0 100%;
+  margin-top: 20px;
+  background-color: #ccc7e2;
+}
+
+.expense-calculator-column.is-form {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.expense-calculator-column ul {
+  list-style-type: none;
+  display: block;
+  height: 330px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.expense-calculator-column ul li {
+  margin-bottom: 40px;
+}
+
+.expense-calculator-column ul li:last-child {
+  margin-bottom: 0;
+}
+
+.expense-calculator-column.is-expenses {
+  background-color: rgb(255 213 188);
+}
+
+.expense-calculator-column.is-incomes {
+  background-color: rgb(134 220 140);
+}
+
+.expense-calculator-column.is-expenses h2,
+.expense-calculator-column.is-incomes h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  padding: 20px 20px 25px;
+}
+
+.expense-calculator-column.is-expenses h2 {
+  color: rgb(175, 52, 52);
+}
+
+.expense-calculator-column.is-incomes h2 {
+  color: rgb(11, 145, 62);
+}
+
+.expense-calculator-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 90px 10px 10px;
+  border-radius: 5px;
+  border-bottom-right-radius: 0;
+  background-color: #f7f5ff;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.05);
+  /* overflow: hidden; */
+}
+
+.expense-calculator-item-headline {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.expense-calculator-item-headline > small {
+  font-weight: 400;
+  display: block;
+  margin-top: 10px;
+}
+
+.expense-calculator-item-amount {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  padding: 5px 20px;
+  min-width: 70px;
+  font-size: 14px;
+  color: #fff;
+  transform: translateY(100%);
+}
+
+.expense-calculator-item-remove {
+  font-size: 20px;
+  color: #000;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  display: block;
+  margin: -10px 0 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.3s ease;
+}
+
+.expense-calculator-item-remove:hover {
+  opacity: 0.5;
+}
+
+.expense-calculator-summary {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 10px;
+  text-align: left;
+}
+
+.expense-calculator-summary > span {
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-left: 10px;
+  /* display: block;
+    float: right; */
+}
+
+.expense-calculator-summary.is-above-none > span {
+  color: rgb(11, 145, 62);
+}
+
+.expense-calculator-summary.is-none > span {
+  color: rgb(0, 0, 0);
+}
+
+.expense-calculator-summary.is-under-none > span {
+  color: rgb(175, 52, 52);
+}
+
+.expense-calculator-form {
+  padding: 30px;
+}
+
+.expense-calculator-form fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-bottom: 10px;
+}
+
+.expense-calculator-form fieldset > label {
+  display: flex;
+  width: calc(50% - 10px);
+  flex: 0 0 calc(50% - 10px);
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #7f76a7;
+}
+
+.expense-calculator-form fieldset > div {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.expense-calculator-form fieldset > label input {
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+
+.expense-calculator-form-field {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.expense-calculator-form-field input {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  padding: 10px 10px;
+  border-top: 5px solid#7f76a7;
+}
+
+.expense-calculator-form fieldset > span,
+.expense-calculator-form-field > span {
+  font-size: 14px;
+  font-style: italic;
+  display: block;
+  width: 100%;
+  flex: 0 0 100%;
+  text-align: right;
+  color: #fff;
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 7px 15px 9px;
+  background-color: #af3434;
+}
+
+.expense-calculator-form-field > small {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #7f76a7;
+}
+
+.expense-calculator-form button {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  width: 100%;
+  padding: 10px 20px;
+  border: 0;
+  margin: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #7f76a7;
+}
